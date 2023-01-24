@@ -1,6 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav mode="side" opened="true">
-    <!-- sidebar content -->
+    <!-- sidebar -->
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar>
@@ -8,25 +8,31 @@
         <mat-icon>menu</mat-icon>
       </button>
       <span>Dashboard</span>
+      <span class="result">Tu deporte favorito es: {{ favoriteSport }}</span>
     </mat-toolbar>
     <mat-grid-list cols="3" rowHeight="300px">
       <mat-grid-tile>
         <mat-card>
-          <!-- card 1 content -->
+          <form>
+            <mat-form-field>
+              <input matInput placeholder="Nombre" [(ngModel)]="name" name="name">
+            </mat-form-field>
+            <button mat-button (click)="openDialog()">Abrir Dialog</button>
+          </form>
         </mat-card>
       </mat-grid-tile>
       <mat-grid-tile>
         <mat-card>
-          <!-- card 2 content -->
+          <!-- card 2 -->
         </mat-card>
       </mat-grid-tile>
       <mat-grid-tile>
         <mat-card>
-          <!-- card 3 content -->
+          <!-- card 3 -->
         </mat-card>
       </mat-grid-tile>
     </mat-grid-list>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
 <router-outlet></router-outlet>
+
